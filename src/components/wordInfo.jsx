@@ -5,11 +5,7 @@ function WordInfo({ word, error }) {
     // display info of searched word
     console.log(word);
 
-    // add phonetics*
 
-    // add origin*
-
-    // display all info in meanings array*
 
     // empty search
     if (error) {
@@ -19,12 +15,29 @@ function WordInfo({ word, error }) {
             </>
         )
     }
-    // word returned
+    // word returned (display all meanings and definitions)
     if (word.length) {
         return (
             <>
                 <h2>{word[0].word}</h2>
-                <p>{word[0].meanings[0].definitions[0].definition}</p>
+
+                {/* add phonetics* */}
+
+                {/* display all meanings with their definitions */}
+                {word[0]["meanings"].map((meaning, index) => {
+                    return <div key={index}>
+
+                        <h3>{meaning.partOfSpeech}</h3>
+
+                        {meaning["definitions"].map((item, i) => {
+                            return <p key={`${i}-def`}>{item.definition}</p>
+
+                            // add synonyms*
+                        })
+                        }
+                    </div>
+                })}
+
             </>
         )
     }
@@ -36,10 +49,7 @@ function WordInfo({ word, error }) {
                 <p>{word.message}</p>
             </>
         )
-
     }
-
 }
-
 
 export default WordInfo;
