@@ -21,7 +21,12 @@ function WordInfo({ word, error }) {
             <>
                 <h2>{word[0].word}</h2>
 
-                {/* add phonetics* */}
+                {/* phonetics */}
+                <figure>
+                    <figcaption>{word[0].phonetics.length ? `Listen to audio` : "No audio available"}</figcaption>
+                    <audio controls src={word[0].phonetics.length ? `${word[0].phonetics[0].audio}` : ""}>
+                    </audio>
+                </figure>
 
                 {/* display all meanings with their definitions */}
                 {word[0]["meanings"].map((meaning, index) => {
