@@ -18,16 +18,158 @@ body {
     background-color: var(--background);
     color: var(--text-primary);
     padding: 1em;
-    height: 100vh;
+    min-height: 100vh;
     font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+main,
+header {
+    max-width: 800px;
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    color: var(--links);
 }
 
 
-/* p {
+/* navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav .theme-toggle svg {
+    fill: var(--text-primary);
+    position: relative;
+    bottom: 4px;
+    left: 4px;
+}
+
+/* font toggle */
+select {
+    padding-left: .4em;
+    /* border-radius: 12px; */
+    cursor: pointer;
+    border: none;
+    background-color: var(--background);
     color: var(--text-primary);
+}
+
+/* select option {
+    border-radius: 12px;
 } */
 
+/* light-dark mode toggle */
+nav .theme-toggle {
+    padding-left: 10px;
+    border-left: 1px solid;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    height: 24px;
+    width: 44px;
+    border-radius: 12px;
+    border: 2px solid var(--text-primary);
+    position: relative;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
+    background-color: var(--text-primary);
+    content: '';
+    position: absolute;
+    top: 1.5px;
+    left: 2px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--background);
+    transition: all .5s;
+}
+
+input[type="checkbox"]:checked::before {
+    left: 52%;
+    transition: all .5s;
+}
+
+/* search form */
+form {
+    position: relative;
+}
+
 form input,
+select,
 button {
     font: inherit;
+}
+
+form input {
+    padding: .7em;
+    background-color: var(--surface);
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+}
+
+form button {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    position: absolute;
+    right: 2px;
+    top: 7px;
+}
+
+form button svg {
+    fill: var(--text-primary);
+}
+
+/* word info */
+.meaning-container {
+    border-bottom: 1px solid;
+    padding-bottom: 2em;
+}
+
+.word-info ul li {
+    margin-top: .5em;
+    line-height: 1.4;
+    font-size: 1.7rem;
+}
+
+.synonyms-container {
+    display: flex;
+    gap: 1em;
+}
+
+.synonyms-container h4 {
+    margin: 0;
+}
+
+.synonyms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.source-container svg {
+    fill: var(--text-primary);
+    position: relative;
+    top: 3px;
+    left: 5px;
+    height: 16px;
+    width: 16px;
 }
