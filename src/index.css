@@ -1,14 +1,18 @@
 :root {
     --background: white;
+    --surface: #dbe4e6;
     --text-primary: black;
-    --text-secondary: royalblue;
+    --text-secondary: #97f0ff;
+    --links: #3983c9;
     --accent: purple;
 }
 
 [data-theme='dark'] {
     --background: black;
+    --surface: #fafdfd;
     --text-primary: white;
     --text-secondary: grey;
+    --links: #97f0ff;
     --accent: darkred;
 }
 
