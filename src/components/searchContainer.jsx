@@ -4,6 +4,8 @@ import WordInfo from "./wordInfo";
 
 function SearchContainer() {
 
+    // add array of searched words*
+
     // keep word state here and pass it to word info
     const [searchedWord, setSearchedWord] = useState([]);
 
@@ -21,7 +23,7 @@ function SearchContainer() {
     return (
         <>
             <SearchForm handleSearch={handleSearch} handleError={handleError} />
-            <WordInfo word={searchedWord} error={error} />
+            <WordInfo word={searchedWord} handleSearch={handleSearch} error={error} />
         </>
     )
 }
