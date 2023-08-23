@@ -1,5 +1,4 @@
 
-
 import './App.css';
 import { useState } from 'react';
 import SearchContainer from './components/searchContainer';
@@ -24,9 +23,13 @@ function App() {
   return (
     <>
       <div className='app' data-theme={theme} data-font={font}>
-        <Navbar switchTheme={switchTheme} switchFont={switchFont} />
-        <h1>Dictionary App</h1>
-        <SearchContainer />
+        <header>
+          <Navbar switchTheme={switchTheme} switchFont={switchFont} theme={theme} />
+        </header>
+
+        <main>
+          <SearchContainer />
+        </main>
       </div>
     </>
   )
