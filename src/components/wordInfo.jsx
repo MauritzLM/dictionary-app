@@ -31,13 +31,17 @@ function WordInfo({ word, error, handleSearch }) {
         return (
             <>
                 <section className="word-info">
-                    <h2>{word[0].word}</h2>
+                    <h1>{word[0].word}</h1>
 
                     {/* phonetics */}
                     <figure>
-                        <figcaption>{word[0].phonetics.length ? `Listen to audio` : "No audio available"}</figcaption>
-                        <audio controls src={word[0].phonetics.length ? `${word[0].phonetics[0].audio}` : ""}>
-                        </audio>
+                        <figcaption>{word[0].phonetics.length ? "Audio" : "No audio available"}</figcaption>
+
+                        {word[0].phonetics?.map((item, index) => {
+                            if (item.audio) {
+                                return <audio key={`audio-${index}`} controls src={item.audio}></audio>
+                            }
+                        })}
                     </figure>
 
                     {/* display all meanings with their definitions */}
@@ -54,7 +58,7 @@ function WordInfo({ word, error, handleSearch }) {
                             </ul>
 
                             <div className="synonyms-container">
-                                <h4>Synonyms</h4>
+                                {meaning.synonyms.length ? <h4>Synonyms</h4> : ''}
                                 <div className="synonyms">
                                     {meaning.synonyms?.map((synonym, i) => {
                                         // search for synonym definition
