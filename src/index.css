@@ -1,18 +1,18 @@
 :root {
-    --background: white;
-    --surface: #dbe4e6;
-    --text-primary: black;
-    --text-secondary: #97f0ff;
-    --links: #3983c9;
+    --background: #fafdfd;
+    --surface: #cde7ec;
+    --text-primary: #191c1d;
+    --text-secondary: #051f23;
+    --links: #006874;
     --accent: purple;
 }
 
 [data-theme='dark'] {
-    --background: black;
-    --surface: #fafdfd;
-    --text-primary: white;
+    --background: #191c1d;
+    --surface: #e1e3e3;
+    --text-primary: #fafdfd;
     --text-secondary: grey;
-    --links: #97f0ff;
+    --links: #4fd8eb;
     --accent: darkred;
 }
 
@@ -22,4 +22,8 @@
 
 [data-font='san-serif'] {
     --font-family: 'Montserrat', sans-serif;
+}
+
+[data-font='monospace'] {
+    --font-family: 'Roboto Mono', monospace;
 }
