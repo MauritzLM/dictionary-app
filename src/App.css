@@ -35,6 +35,11 @@ figure {
     margin: 0;
 }
 
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
 a {
     color: var(--links);
 }
@@ -56,7 +61,7 @@ nav .theme-toggle svg {
 
 /* font toggle */
 select {
-    padding-left: .4em;
+    /* padding-left: .4em; */
     /* border-radius: 12px; */
     cursor: pointer;
     border: none;
@@ -123,6 +128,8 @@ form input {
     border-radius: 12px;
     border: none;
     width: 100%;
+    min-width: 326px;
+    font-size: 1.8rem;
 }
 
 form button {
@@ -131,14 +138,23 @@ form button {
     border: none;
     position: absolute;
     right: 2px;
-    top: 7px;
+    top: 8px;
 }
 
 form button svg {
-    fill: var(--text-primary);
+    fill: #191c1d;
+    height: 30px;
+    width: 30px;
 }
 
 /* word info */
+
+figcaption,
+audio {
+    margin-bottom: .5em;
+    margin-left: 1em;
+}
+
 .meaning-container {
     border-bottom: 1px solid;
     padding-bottom: 2em;
@@ -172,4 +188,12 @@ form button svg {
     left: 5px;
     height: 16px;
     width: 16px;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 599px) {
+    h1 {
+        font-size: 6rem;
+    }
 }
