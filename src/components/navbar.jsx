@@ -8,8 +8,8 @@ function Navbar({ switchTheme, switchFont, theme }) {
         <>
             <nav>
                 <select name="font-select" id="font-select" onChange={e => switchFont(e)}>
-                    <option value="san-serif">san-serif</option>
                     <option value="serif">serif</option>
+                    <option value="san-serif">san-serif</option>
                     <option value="monospace">monospace</option>
                 </select>
                 <div className='theme-toggle'>
