@@ -35,7 +35,7 @@ function WordInfo({ word, error, handleSearch }) {
 
                     {/* phonetics */}
                     <figure>
-                        <figcaption>{word[0].phonetics.length ? "Audio" : "No audio available"}</figcaption>
+                        <figcaption>{word[0].phonetics[0].audio ? "Audio" : "No audio available"}</figcaption>
 
                         {word[0].phonetics?.map((item, index) => {
                             if (item.audio) {
